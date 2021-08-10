@@ -53,6 +53,10 @@ public class BookService {
         }
     }
 
+    public long getTotalBookByNameAndCategoryAndPublisher(String bookName, int cateId,int publisherId){
+        return repository.getTotalBookByNameAndCategoryAndPublisher(cateId,bookName,publisherId);
+    }
+
 //    public List<Book> getBooksByCategory(int cateId){
 //
 //    }

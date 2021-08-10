@@ -110,6 +110,18 @@ public class BookController {
 
     }
 
+    @PostMapping("/getAmount")
+    public DataApiResult getAmontBy(@RequestBody GetAmountDTO dto){
+
+        DataApiResult result=new DataApiResult();
+
+        long amount=bookService.getTotalBookByNameAndCategoryAndPublisher(dto.getBookName(),dto.getCateId(),dto.getPublisherId());
+        result.setData(amount);
+        result.setMessage("done");
+
+        return result;
+    }
+
     //thêm mới sách
     @PostMapping(value = "")
     public DataApiResult insertBook(@RequestBody BookDTO bookDTO){
