@@ -1,6 +1,5 @@
 package application.controller.api;
 
-
 import application.data.model.*;
 import application.data.repository.*;
 import application.data.service.*;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -110,18 +108,17 @@ public class BookController {
 
     }
 
-    @PostMapping("/getAmount")
-    public DataApiResult getAmontBy(@RequestBody GetAmountDTO dto){
-
-        DataApiResult result=new DataApiResult();
-
-        long amount=bookService.getTotalBookByNameAndCategoryAndPublisher(dto.getBookName(),dto.getCateId(),dto.getPublisherId());
-        result.setData(amount);
-        result.setMessage("done");
-
-        return result;
-    }
-
+//    @PostMapping("/getAmount")
+//    public DataApiResult getAmontBy(@RequestBody GetAmountDTO dto) {
+//
+//        DataApiResult result = new DataApiResult();
+//
+//        long amount = bookService.getTotalBookByNameAndCategoryAndPublisher(dto.getBookName(), dto.getCateId(), dto.getPublisherId());
+//        result.setData(amount);
+//        result.setMessage("done");
+//
+//        return result;
+//    }
     //thêm mới sách
     @PostMapping(value = "")
     public DataApiResult insertBook(@RequestBody BookDTO bookDTO){

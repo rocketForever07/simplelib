@@ -29,5 +29,7 @@ public interface BookCategoryRepository extends JpaRepository<BookCategory,Integ
             "where bc.bookId = :bookId")
     void deleteByBook(@Param("bookId") int bookId);
 
+    
+
 
 }
